@@ -1,0 +1,25 @@
+<%def name="render(character)">
+
+<%
+  def rank_to_color(rank):
+    return "orange" if rank == 5 else "purple"
+%>
+
+<div style="
+  margin: 10;
+">
+  <div style="
+    padding: 5;
+    background-color: ${rank_to_color(character.quality)};
+  ">
+    <img src="${character.data}" width="64px" height="64px">
+  </div>
+  <div style="
+    color: white;
+    font-size: ${character.font_size}px;
+    font-family: ${character.font_family};
+  ">
+    ${character.txt}
+  </div>
+</div>
+</%def>

@@ -1,0 +1,35 @@
+<%namespace name="cell" file="character_cell.html"/>
+<%namespace name="header" file="character_header.html"/>
+
+<table id="capture">
+  <tr>
+% for value in table[0]:
+    <th class="agent-cell-line">
+% if value is not None:
+      ${header.render(value)}
+% endif
+    </th>
+% endfor
+  </tr>
+
+% for rindex in range(1, len(table)):
+  <tr>
+    <th class="agent-cell-line">
+      ${header.render(table[rindex][0])}
+    </th>
+
+% for cindex in range(1, len(table[rindex])):
+    <th class="agent-content agent-cell-line">
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      ">
+% for value in table[rindex][cindex]:
+        ${cell.render(value)}
+% endfor
+      </div>
+    </th>
+% endfor
+  </tr>
+% endfor
+</table>

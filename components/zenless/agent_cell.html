@@ -1,0 +1,25 @@
+<%def name="render(agent)">
+
+<%
+  def rank_to_color(rank):
+    return "orange" if rank == "s" else "purple"
+%>
+
+<div style="
+  margin: 10;
+">
+  <div style="
+    padding: 5;
+    background-color: ${rank_to_color(agent.rank)};
+  ">
+    <img src="${agent.data}" width="64px" height="64px">
+  </div>
+  <div style="
+    color: white;
+    font-size: ${agent.font_size}px;
+    font-family: ${agent.font_family};
+  ">
+    ${agent.txt}
+  </div>
+</div>
+</%def>

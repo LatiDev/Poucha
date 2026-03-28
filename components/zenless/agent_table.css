@@ -1,0 +1,25 @@
+:root {
+    --default-background-color: black;
+    --background-color: rgb(29, 31, 30);
+
+    --default-border-line: green;
+    --border-line: rgb(197, 219, 27);
+}
+
+body {
+    background-color: var(--background-color, --default-background-color);
+}
+
+.agent-header {
+    background-color: var(--background-color, --default-background-color);
+    margin: 10;
+
+}
+
+.agent-content {
+    padding: 10;
+}
+
+.agent-cell-line {
+    border: 1px solid var(--border-line, ---default-border-line);
+}
